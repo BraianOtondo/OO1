@@ -30,7 +30,7 @@ public class Punto {
 		return ((x == punto.getX()) && (y == punto.getY()));
 	}
 
-	@Override
+	
 	public String toString() {
 		return "Punto [x=" + x + ", y=" + y + "]";
 	}

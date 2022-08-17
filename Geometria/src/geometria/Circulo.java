@@ -31,7 +31,6 @@ public class Circulo {
 		this.setRadio(distancia);
 	}
 
-	@Override
 	public String toString() {
 		return "Circulo [origen=" + origen + ", radio=" + radio + "]";
 	}
