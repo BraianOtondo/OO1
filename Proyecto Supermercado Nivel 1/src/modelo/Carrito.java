@@ -89,12 +89,16 @@ public class Carrito {
 	//una excepción.
 	public boolean eliminarItem(Producto producto, int cantidad)throws Exception{
 		ItemCarrito objeto=this.traerItemCarrito(producto);
+		boolean eliminado=false;
 		if(objeto==null){
 			throw new Exception("El producto "+producto.getProducto()+" no existe");
 		}
-		if(objeto.getCantidad()>cantidad){
+		if(objeto.getCantidad()==cantidad){
+			this.lstItem.remove(objeto);
+			eliminado=true;
+		}else if(objeto.getCantidad()>cantidad){
 			objeto.setCantidad(objeto.getCantidad()-cantidad);
 		}
-		return (this.lstItem.remove(objeto) && objeto.getCantidad()==cantidad);//revisar si funciona
+		return eliminado;//revisar si funciona
 	}
 }
